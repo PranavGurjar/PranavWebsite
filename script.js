@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'
             });
+            // Close the mobile menu after clicking a link
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
         });
     });
 
@@ -35,4 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
             themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
         }
     }
+
+    // Mobile menu toggle functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
 });
