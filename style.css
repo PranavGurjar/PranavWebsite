@@ -1,3 +1,5 @@
+/* --- Updated CSS for Responsiveness --- */
+
 /* Basic Reset and Fonts */
 * {
     margin: 0;
@@ -98,6 +100,9 @@ header .logo {
 header ul {
     list-style: none;
     display: flex;
+    /* Add for mobile menu toggle */
+    flex-direction: row;
+    align-items: center;
 }
 
 header ul li {
@@ -213,6 +218,9 @@ h2::after {
 .about-content {
     max-width: 800px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .about-content ul {
@@ -396,4 +404,53 @@ footer {
     padding: 20px 0;
     background: #333;
     color: #fff;
+}
+
+/* --- Media Queries for Mobile Responsiveness --- */
+
+/* Adjusts styles for screens smaller than 768px */
+@media (max-width: 768px) {
+    header nav ul {
+        display: none; /* Hides the menu on mobile */
+    }
+
+    /* Add a mobile menu button if you want to implement a dropdown */
+    /* .mobile-menu-toggle { display: block; } */
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px; /* Add space for fixed header */
+        gap: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1.2rem;
+    }
+    
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .hero-image img, .about-image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr; /* Stacks skills vertically */
+    }
+
+    .certificate-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .certificate-item {
+        width: 80%; /* Makes certificate items larger for readability */
+    }
 }
